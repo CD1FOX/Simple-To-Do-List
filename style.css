@@ -6,24 +6,93 @@ body {
 }
 
 .to-do-list-wrapper {
-    background-color: rgb(252, 226, 214);
+    margin: 40px auto;
+    max-width: 400px;
+    font-family: "Pixelify Sans", sans-serif;  
+    background-color: rgb(248, 235, 229);
     padding: 80px;
     border-radius: 20px;
     box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.2);
 }
 
-.task{
-    list-style: none;
-    margin: 30px auto;
+.task-wrapper {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.task-wrapper input{
+    width: 350px;
+    border: none;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.task-wrapper input:focus {
+    outline: solid 2px lightgreen;
+}
+
+.task-wrapper button {
+    background-color: lightgreen;
+    border: none;
     padding: 10px 20px;
-    text-align: left;
+    border-radius: 10px;
+    max-width: 100px;
+    transition: background-color 0.3s;
+}
+
+.task-wrapper button:hover {
+    background-color: rgb(123, 219, 123);
+}
+
+.to-do-list-wrapper h1 {
+    text-align: center;
+}
+
+.task{
+    align-items: center;
+    list-style: none;
+    margin: 10px auto;
+    padding: 30px 20px;
     border-radius: 20px;
     background-color: rgb(253, 208, 187);
     display: flex;
     justify-content: space-between;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+    text-overflow: ellipsis;
+    transition: transform 1s;
+    
+}
+
+.task:hover {
+    transform: scale(1.02);
+}
+
+.task span {
+    margin-right: 50px;
+    flex-shrink: 1;
+    line-height: 1.8;
 }
 
 .task-list ul {
     padding: 0px;
     margin: 0px;
+}
+
+.complete-btn {
+    background-color: lightgreen;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.complete-btn:hover {
+    background-color: rgb(123, 219, 123);
+}
+
+button {
+    cursor: pointer;
 }
