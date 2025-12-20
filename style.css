@@ -96,3 +96,8 @@ body {
 button {
     cursor: pointer;
 }
+
+.task.completed {
+    background-color: lightgreen;
+    opacity: 0.8;
+}
