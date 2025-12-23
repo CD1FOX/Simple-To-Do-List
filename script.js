@@ -1,6 +1,6 @@
 const taskInput = document.querySelector(".task-wrapper input");
 const addTaskButton = document.querySelector(".task-wrapper button");
-const taskListUL = document.querySelector(".task-list ul")
+const taskListUL = document.querySelector(".task-list ul");
 
 function addTaskHandler(){
     const currentTask = taskInput.value;
@@ -15,7 +15,10 @@ function addTaskHandler(){
 
     li.innerHTML = `
         <span>${currentTask}</span>
-        <button type="button" class="complete-btn">Complete</button>
+        <div class="task-btn">
+            <button type="button" class="delete-btn">Delete</button>
+            <button type="button" class="complete-btn">Complete</button>
+        </div>
     `;
 
     taskListUL.appendChild(li);
@@ -29,6 +32,13 @@ addTaskButton.addEventListener('click', addTaskHandler);
 taskListUL.addEventListener('click', function(event){
     if (event.target.classList.contains("complete-btn")){
         const taskItem = event.target.closest(".task");
-        taskItem.classList.toggle("completed")
+        taskItem.classList.toggle("completed");
+    }
+});
+
+taskListUL.addEventListener('click', function(event){
+    if (event.target.classList.contains("delete-btn")){
+        const taskItem = event.target.closest(".task");
+        taskItem.remove();
     }
 });

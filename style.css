@@ -61,9 +61,28 @@ body {
     display: flex;
     justify-content: space-between;
     box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
-    text-overflow: ellipsis;
     transition: transform 1s;
-    
+}
+
+.task-btn {
+    display: flex;
+    margin-left: auto;
+    gap: 5px;
+    flex-direction: column;
+}
+
+.delete-btn {
+    min-width: 100px;
+    background-color: rgb(252, 76, 76);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+}
+
+.delete-btn:hover {
+    background-color: rgb(182, 13, 13);
 }
 
 .task:hover {
@@ -74,6 +93,10 @@ body {
     margin-right: 50px;
     flex-shrink: 1;
     line-height: 1.8;
+    display: inline-block;
+    min-width: 200px;
+    overflow-wrap: break-word;
+    
 }
 
 .task-list ul {
@@ -82,6 +105,7 @@ body {
 }
 
 .complete-btn {
+    min-width: 100px;
     background-color: lightgreen;
     border: none;
     padding: 10px 20px;
@@ -90,7 +114,7 @@ body {
 }
 
 .complete-btn:hover {
-    background-color: rgb(123, 219, 123);
+    background-color: rgb(91, 184, 91);
 }
 
 button {
